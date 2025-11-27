@@ -15,6 +15,10 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 app.use("/uploads", express.static("uploads"));
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
